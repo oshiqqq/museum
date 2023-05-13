@@ -1,3 +1,6 @@
+<?php 
+        include("app/controllers/users.php");
+ ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -18,24 +21,28 @@
 <?php include("app/include/header.php"); ?>
 <!-- логин -->
 <div class="container reg_form" id="repair7">
-    <form class="row justify-content-center" method="post" action="log.html">
+    <form class="row justify-content-center" method="post" action="log1.php">
         <h2 class="col-12" id="repair6">Авторизация</h2>
+        <div class="mb-3 col-12 col-md-4 err">
+                <p><?=$errMsg?></p>
+        </div><div class="w-100"></div>
         <div class="mb-3 col-12 col-md-4">
-            <label for="formGroupExampleInput" class="form-label">Ваш логин</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="введите ваш логин...">
+            <label for="formGroupExampleInput" class="form-label">Ваш email (при регистрации)</label>
+            <input name="email" value="<?=$email?>" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="введите ваш email...">
+
         </div>
         <div class="w-100"></div>
         <div class="mb-3 col-12 col-md-4">
             <label for="exampleInputPassword1" class="form-label">Пароль</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="введите ваш пароль...">
+            <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="введите ваш пароль...">
         </div>
         <div class="w-100"></div>
         <div class="mb-3 col-12 col-md-4">
-            <button type="button" class="btn btn-secondary">Войти</button>
+            <button type="submit" class="btn btn-secondary" name="button-log">Войти</button>
             <button type="button" class="btn btn-secondary"><a href="reg.php">Зарегистрироваться</a></button>
         </div>
     </form>
-</div>>
+</div>
         </div>
         <!-- footer -->
         <?php include("app/include/footer.php"); ?>

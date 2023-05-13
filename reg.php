@@ -1,7 +1,6 @@
+<?php include("app/controllers/users.php"); ?>
 <!doctype html>
-<?php 
-include("app/controllers/users.php");
-?>
+
 
 <html lang="en">
 <head>

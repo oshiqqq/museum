@@ -2,7 +2,20 @@
 include("app/database/db.php");
 
 $errMsg = '';
-if($_SERVER['REQUEST_METHOD'] === 'POST'){
+
+function userAuth($user){
+    $_SESSION['id'] = $user['id'];
+            $_SESSION['login'] = $user['username'];
+            $_SESSION['admin'] = $user['admin'];
+            if($_SESSION['admin']){
+                header('location: ' . "../../museum1/admin/admin.php");
+            }else{
+                header('location: ' . "../../museum1/index.php");
+            }
+        }
+// Код для формы регистрации
+if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-reg'])){
+    
     $admin = 0;
     $login = trim($_POST['login']);
     $email = trim($_POST['email']);
@@ -32,14 +45,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
                 $id = insert('users',$post);
                 $user = selectOne('users',['id' => $id]);
                 
-                $_SESSION['id'] = $user['id'];
-                $_SESSION['login'] = $user['username'];
-                $_SESSION['admin'] = $user['admin'];
-                if($_SESSION['admin']){
-                    header('location: ' . "../../museum1/admin/admin.php");
-                }else{
-                    header('location: ' . "../../museum1/index.php");
-                }
+                userAuth($user);
                 
                 
         }
@@ -49,4 +55,24 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $login = '';
     $email = '';
 }
+// код для формы авторизации
+if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-log'])){
+    $email = trim($_POST['email']);
+    $pass = trim($_POST['password']);  
+    
+    if($email === '' || $pass === ''){
+        $errMsg = "Не все поля заполнены!";
+
+    }else{
+    $existence = selectOne('users',['email'=> $email]);
+        if($existence && password_verify($pass, $existence['password'])){
+            userAuth($existence);
+            
+        }else{
+            $errMsg = "Почта либо пароль введены: неверно!";
+        }
+       }
+    }else{
+        $email = '';
+    }
 

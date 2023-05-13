@@ -29,12 +29,12 @@
                         </ul>
                                 <?php else: ?>
 
-                            <a href="../log.php">
+                            <a href="./log1.php">
                             <i class="fa fa-user"></i>
                             Войти
                             </a>
                             <ul>
-                                <li><a href = "../reg.php">Регистрация</a> </li>
+                                <li><a href = "./reg.php">Регистрация</a> </li>
                             </ul>
                                 <?php endif; ?>
                         
