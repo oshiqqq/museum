@@ -18,23 +18,13 @@
 <!-- header -->
 <?php include("../../app/include/header-admin.php"); ?>
 <div class ="container">
-        <div class="row">
-            <div class = "sidebar col-3">
-                <ul>
-                    <li> 
-                        <a href="">Записи</a>
-                    </li>
-                    <li> 
-                        <a href="">Пользователи</a>
-                    </li>
-                </ul>
-            </div>
+<?php include("../../app/include/sidebar-admin.php"); ?>
           
             <div class = "posts col-9">
                 <div class="button row">
                     <a href = "create.php" class="col-3 btn btn-dark">Создать</a>
                     <span class = "col-1"></span>
-                    <a href = "index.php" class="col-3 btn btn-secondary">Управление</a>
+                    <a href = "index.php" class="col-3 btn btn-secondary">Редактировать</a>
                 </div>
                 <div class = "row title-table">
                     <h1>Управление пользователями</h1>
