@@ -2,13 +2,14 @@
 include("app/database/db.php");
 
 $errMsg = '';
-
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $admin = 0;
     $login = trim($_POST['login']);
     $email = trim($_POST['email']);
     $passF = trim($_POST['pass-first']);            
     $passS = trim($_POST['pass-second']); 
+    
+
     if($login === ''|| $email === '' || $passF === ''){
         $errMsg = "Не все поля заполнены!";
     }elseif (mb_strlen($login, 'UTF8') < 2){
@@ -16,6 +17,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     }elseif ($passF !== $passS){
         $errMsg = "Пароли в обоих полях должны соответствовать!";
     }else{
+        $existence = selectOne('users',['email'=> $email]);
+       if(!empty($existence['email']) && $existence['email'] === $email) {
+        $errMsg = "Пользователь с такой почтой уже зарегистрирован";
+       }else{
         $pass = password_hash($passF, PASSWORD_DEFAULT);
         $post = [
             'admin' => $admin,
@@ -24,9 +29,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             'password' => $pass,
         ];
 
-        //    $id = insert('users',$post);
-        //    $last_row = selectOne('users',['id'=>$id]);  
-        tt($post);
+                $id = insert('users',$post);
+                $errMsg = "Пользователь " . "<strong>" . $login . "</strong>" . " успешно зарегистрирован";
+        }
     }
 
 }else{
@@ -34,6 +39,4 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $login = '';
     $email = '';
 }
-
-//          $pass = password_hash($_POST['pass-second'], PASSWORD_DEFAULT);
 
