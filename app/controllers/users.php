@@ -4,7 +4,7 @@ include("app/database/db.php");
 $errMsg = '';
 
 function userAuth($user){
-    $_SESSION['id'] = $user['id'];
+            $_SESSION['id'] = $user['id'];
             $_SESSION['login'] = $user['username'];
             $_SESSION['admin'] = $user['admin'];
             if($_SESSION['admin']){

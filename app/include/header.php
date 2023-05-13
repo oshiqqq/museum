@@ -25,7 +25,7 @@
 
                         <?php endif; ?>
 
-                            <li><a href="#">Выход</a> </li>
+                            <li><a href="./logout.php">Выход</a> </li>
                         </ul>
                                 <?php else: ?>
 
