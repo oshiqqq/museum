@@ -30,12 +30,22 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         ];
 
                 $id = insert('users',$post);
-                $errMsg = "Пользователь " . "<strong>" . $login . "</strong>" . " успешно зарегистрирован";
+                $user = selectOne('users',['id' => $id]);
+                
+                $_SESSION['id'] = $user['id'];
+                $_SESSION['login'] = $user['username'];
+                $_SESSION['admin'] = $user['admin'];
+                if($_SESSION['admin']){
+                    header('location: ' . "../../museum1/admin/admin.php");
+                }else{
+                    header('location: ' . "../../museum1/index.php");
+                }
+                
+                
         }
     }
 
 }else{
-    echo "get";
     $login = '';
     $email = '';
 }
