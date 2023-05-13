@@ -66,7 +66,6 @@ function selectAll($table,$params = []){
            }     
         }   
 
-//  $sql = $sql . " LIMIT 1";
     $query = $pdo->prepare($sql);
     $query->execute();
     dbCheckError($query);   
@@ -94,23 +93,44 @@ function insert($table, $params){
     }
 
     $sql = "INSERT INTO $table ($coll) VALUES ($mask)";
-    // tt($sql);
-    // exit();
-    
     $query = $pdo->prepare($sql);
     $query->execute($params);
     dbCheckError($query);   
-
 } 
-$arrdata = [
-    'admin' => '1',
-    'username' => 'artemsstest1',
-    'email' => 'tre2141s@mail.ru',
-    'password' => '213123',
-    'created' => '2023-05-11 14:21:52'
-];
 
-insert('users',$arrdata);
+
+//обновление данных 
+function update($table, $id, $params){
+    global $pdo;
+    $i = 0;
+    $str='';
+    foreach ($params as $key => $value) {
+        if ($i === 0){
+        $str = $str . $key . " = '" . $value . "'"; 
+        }else{
+            
+            $str = $str . ", " . $key .  " = '" . $value . "'"; 
+            }   
+        
+        
+        $i++;
+    }
+
+    $sql = "UPDATE $table SET $str WHERE id = $id";
+    $query = $pdo->prepare($sql);
+    $query->execute($params);
+    dbCheckError($query);   
+} 
+
+//функция удаления
+function delete($table, $id){
+    global $pdo;
+    $sql = "DELETE FROM $table WHERE id = $id";
+    $query = $pdo->prepare($sql);
+    $query->execute();
+    dbCheckError($query);   
+} 
+
 
 
 ?>
