@@ -32,7 +32,7 @@
         <div class="w-100"></div>
         <div class="mb-3 col-12 col-md-4">
             <button type="button" class="btn btn-secondary">Войти</button>
-            <button type="button" class="btn btn-secondary"><a href="reg..php">Зарегистрироваться</a></button>
+            <button type="button" class="btn btn-secondary"><a href="reg.php">Зарегистрироваться</a></button>
         </div>
     </form>
 </div>>
