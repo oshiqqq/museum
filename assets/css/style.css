@@ -285,3 +285,8 @@ header ul li ul li a {
 #emailHelp{
     color:rgb(236, 236, 247);
 }
+/* FORMS */
+form div.err{
+    color: brown;
+    font-size: 1.2rem;
+}
