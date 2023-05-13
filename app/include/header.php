@@ -39,7 +39,7 @@
                                 <?php endif; ?>
                         
                     </li>
-                    <li><a href="add.php">Добавить экспонат</a></li>
+                    
                 </ul>
             </nav>
         </div>

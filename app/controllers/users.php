@@ -8,7 +8,7 @@ function userAuth($user){
             $_SESSION['login'] = $user['username'];
             $_SESSION['admin'] = $user['admin'];
             if($_SESSION['admin']){
-                header('location: ' . "../../museum1/admin/admin.php");
+                header('location: ' . "../../museum1/admin/posts/index.php");
             }else{
                 header('location: ' . "../../museum1/index.php");
             }
