@@ -60,7 +60,7 @@ include "../../app/controllers/exhibits.php"
         </div>
         <div class="mb-3">
             <label for="image" class="form-label">Изображение</label>
-            <input name="image" type="file" class="form-control" id="image" required>
+            <input name="image" type="file" class="form-control" id="image">
         </div> 
         <div class="form-check">
             <input name="publish" class="form-check-input" type="checkbox" value="1" id="flexCheckChecked" checked>
@@ -71,7 +71,7 @@ include "../../app/controllers/exhibits.php"
             
         </div>
 
-        <button name="exhibits-create" type="submit" class="btn btn-primary" id="repair5" >Сохранить</button>
+        <button name="exhibits-create" type="submit" class="btn btn-primary" id="repair5" >Добавить</button>
     </form>
                 </div>
                 </div>

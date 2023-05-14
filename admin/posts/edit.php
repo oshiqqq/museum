@@ -23,11 +23,11 @@ include "../../app/controllers/exhibits.php"
 <?php include("../../app/include/sidebar-admin.php"); ?>
           
             <div class = "posts col-9">
-                <div class="button row">
+                <!-- <div class="button row">
                     <a href = "create.php" class="col-4 btn btn-dark">Добавить экспонат</a>
                     <span class = "col-1"></span>
                     <a href = "index.php" class="col-4 btn btn-secondary">Редактировать</a>
-                </div>
+                </div> -->
                 <div class = "row title-table">
                     <h1>Обновление экспоната</h1>
                     
@@ -36,10 +36,11 @@ include "../../app/controllers/exhibits.php"
                 <div class = "row add-post">
                 <div class="mb-12 col-12 col-md-12 err">
                 <p><?=$errMsg?></p>
-        </div>
-                <form action="edit.php" method="post">
+                </div>
+                <form action="edit.php" method="post" enctype="multipart/form-data">
                 <input name="id" value= "<?=$id;?>" type="hidden">
         <div class="mb-3">
+            <label for="name" class="form-label">Название</label>
             <input name="name" value="<?= $name ?>" type="text" class="form-control" id="name" placeholder="Введите название экспоната" required minlength="3">
         </div>
         <div class="mb-3">
@@ -58,11 +59,27 @@ include "../../app/controllers/exhibits.php"
             <label for="storage" class="form-label">Место хранения</label>
             <input name="place" value="<?= $place ?>" type="text" class="form-control" id="storage" placeholder="Введите место хранения экспоната" required>
         </div>
-        <!-- <div class="mb-3">
+        <div class="mb-3">
             <label for="image" class="form-label">Изображение</label>
-            <input name="" type="file" class="form-control" id="image" required>
-        </div> -->
-        <button name="exhibits-edit" type="submit" class="btn btn-primary" id="repair5" >Обновить экспонат</button>
+            <input name="image" type="file" class="form-control" id="image">
+        </div> 
+        <div class="form-check">
+            <?php if(empty($publish) && $publish == 0): ?>
+                <input name="publish" class="form-check-input" type="checkbox" id="flexCheckChecked" >
+                <label class="form-check-label" for="flexCheckChecked">
+                
+                    publish
+                </label>
+                <?php else: ?>
+                    <input name="publish" class="form-check-input" type="checkbox" id="flexCheckChecked" checked>
+                <label class="form-check-label" for="flexCheckChecked" >
+                
+                    publish
+                </label>
+                <?php endif; ?>
+        </div>
+
+        <button name="exhibits-edit" type="submit" class="btn btn-primary" id="repair5" >Сохранить</button>
     </form>
                 </div>
                 </div>

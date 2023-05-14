@@ -48,9 +48,9 @@ include ("../../app/controllers/exhibits.php");
                     <div class ="red col-1"><a href="edit.php?id=<?=$exhibit['id'];?>">edit</a></div>
                     <div class ="del col-1"><a href="edit.php?del_id=<?=$exhibit['id'];?>">delete</a></div>
                     <?php if($exhibit['status']): ?>
-                    <div class ="status col-2"><a href="edit.php?del_id=<?=$exhibit['id'];?>">unpublish</a></div>
+                    <div class ="status col-2"><a href="edit.php?publish=0&pub_id=<?=$exhibit['id'];?>">unpublish</a></div>
                     <?php else: ?>
-                        <div class ="status col-2"><a href="edit.php?del_id=<?=$exhibit['id'];?>">publish</a></div>
+                        <div class ="status col-2"><a href="edit.php?publish=1&pub_id=<?=$exhibit['id'];?>">publish</a></div>
                         <?php endif; ?>
                 </div>
                 <?php endforeach; ?>
