@@ -174,3 +174,4 @@ if($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['del_id'])){
     header('location: ' . "index.php");
 }
 
+

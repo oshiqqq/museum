@@ -1,4 +1,4 @@
-<?php //session_start();
+<?php 
 include ("../../app/controllers/exhibits.php");
  ?>
 

@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php 
+include ("../../app/controllers/users.php");
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -27,27 +29,28 @@
                     <a href = "index.php" class="col-3 btn btn-secondary">Редактировать</a>
                 </div>
                 <div class = "row title-table">
-                    <h1>Управление пользователями</h1>
+                    <h1>пользователи</h1>
                     <div class ="col-1">ID</div>
-                    <div class ="col-4">Логин</div>
-                    <div class ="col-3">Роль</div>
+                    <div class ="col-2">Логин</div>
+                    <div class ="col-3">Email</div>
+                    <div class ="col-2">Роль</div>
                     <div class ="col-4">Управление</div>
-                    
-                </div>
+                    </div>
+                    <?php foreach($users as $key=>$user): ?>
                 <div class = "row post">
-                    <div class ="id col-1">1</div>
-                    <div class ="tittle col-4">oshisl</div>
-                    <div class ="age col-3">Admin</div>
-                    <div class ="red col-2"><a href="#">edit</a></div>
-                    <div class ="del col-2"><a href="#">delete</a></div>
+                <div class ="col-1"><?=$user['id'];?></div>
+                    <div class ="col-2"><?=$user['username'];?></div>
+                    <div class ="col-3"><?=$user['email'];?></div>
+                    <?php if($user['admin'] == 1): ?>
+                    <div class ="col-2">Admin</div>
+                    <?php else: ?>
+                    <div class ="col-2">User</div>
+                    <? endif; ?>
+                    <div class ="red col-2"><a href="edit.php?edit_id=<?=$user['id'];?>">edit</a></div>
+                    <div class ="del col-2"><a href="index.php?delete_id=<?=$user['id'];?>">delete</a></div>
                 </div>
-                <div class = "row post">
-                    <div class ="id col-1">2</div>
-                    <div class ="tittle col-4">vika228</div>
-                    <div class ="age col-3">User</div>
-                    <div class ="red col-2"><a href="#">edit</a></div>
-                    <div class ="del col-2"><a href="#">delete</a></div>
-                </div>
+                        <?php endforeach; ?>
+              
                 
                 </div>
             

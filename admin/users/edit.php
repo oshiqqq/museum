@@ -24,12 +24,12 @@ include "../../app/controllers/users.php"
           
             <div class = "posts col-9">
             <div class="button row">
-                    <a href = "create.php" class="col-3 btn btn-dark">Создать</a>
+                    <a href = "edit.php" class="col-3 btn btn-dark">Создать</a>
                     <span class = "col-1"></span>
                     <a href = "index.php" class="col-3 btn btn-secondary">Редактировать</a>
                 </div>
                 <div class = "row title-table">
-                    <h1>редактировать пользователя</h1>
+                    <h1>Создать пользователя</h1>
                     
                     
                 </div>
@@ -38,18 +38,19 @@ include "../../app/controllers/users.php"
                 <p><?=$errMsg?></p>
         </div>
                 <form action="create.php" method="post">
+                <input name="id" value="<?=$id?>" type="hidden">
                 <div class="col">
-            <label for="formGroupExampleInput" class="form-label">Ваш логин</label>
-            <input name="login" value="" type="text" class="form-control" id="formGroupExampleInput" placeholder="введите ваш логин...">
+            <label for="formGroupExampleInput" class="form-label">Логин</label>
+            <input name="login" value="<?=$username?>" type="text" class="form-control" id="formGroupExampleInput" placeholder="введите ваш логин...">
         </div>
         <div class="w-100"></div>
         <div class="col">
             <label for="exampleInputEmail1" class="form-label">Email</label>
-            <input name="email" value="" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="введите ваш email...">
+            <input readonly name="email" value=" <?=$email?>" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="введите ваш email...">
         </div>
         <div class="w-100"></div>
         <div class="col">
-            <label for="exampleInputPassword1" class="form-label">Пароль</label>
+            <label for="exampleInputPassword1" class="form-label">Сбросить пароль</label>
             <input name="pass-first" type="password" class="form-control" id="exampleInputPassword1" placeholder="введите ваш пароль...">
         </div>
         <div class="w-100"></div>
@@ -63,7 +64,7 @@ include "../../app/controllers/users.php"
                 Admin
             </label>
                 <div class="col">
-        <button name="create-user" type="submit" class="btn btn-primary" id="repair5">Создать</button>
+        <button name="update-user" type="submit" class="btn btn-primary" id="repair5">Обновить</button>
                 </div>
     </form>
                 </div>
