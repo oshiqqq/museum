@@ -221,3 +221,14 @@ div .col{
 .err{
     color:crimson;
 }
+
+.col-6{
+    overflow: auto; /* Чтобы избежать перекрытия */
+    float: left;
+    align-items: left;
+    justify-content: flex-start;
+}
+#repair5{
+    display: block;
+    margin-top: 10px;
+}

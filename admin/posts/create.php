@@ -1,4 +1,4 @@
-<?php ///session_start();
+<?php
 include "../../app/controllers/exhibits.php"
 ?>
 <!doctype html>
@@ -37,7 +37,7 @@ include "../../app/controllers/exhibits.php"
                 <div class="mb-12 col-12 col-md-12 err">
                 <p><?=$errMsg?></p>
         </div>
-                <form action="create.php" method="post">
+                <form action="create.php" method="post" enctype="multipart/form-data">
         <div class="mb-3">
             <label for="name" class="form-label">Название</label>
             <input name="name" value="<?= $name ?>" type="text" class="form-control" id="name" placeholder="Введите название экспоната" required minlength="3">
@@ -58,10 +58,19 @@ include "../../app/controllers/exhibits.php"
             <label for="storage" class="form-label">Место хранения</label>
             <input name="place" value="<?= $place ?>" type="text" class="form-control" id="storage" placeholder="Введите место хранения экспоната" required>
         </div>
-        <!-- <div class="mb-3">
+        <div class="mb-3">
             <label for="image" class="form-label">Изображение</label>
-            <input name="" type="file" class="form-control" id="image" required>
-        </div> -->
+            <input name="image" type="file" class="form-control" id="image" required>
+        </div> 
+        <div class="form-check">
+            <input name="publish" class="form-check-input" type="checkbox" value="1" id="flexCheckChecked" checked>
+            <label class="form-check-label" for="flexCheckChecked">
+            
+                Publish
+            </label>
+            
+        </div>
+
         <button name="exhibits-create" type="submit" class="btn btn-primary" id="repair5" >Сохранить</button>
     </form>
                 </div>

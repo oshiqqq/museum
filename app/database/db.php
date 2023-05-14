@@ -134,7 +134,27 @@ function delete($table, $id){
     dbCheckError($query);   
 } 
 
+// выборка записей (posts) с автором  в админку
+function selectAllFromExhibitsWithUsers($table1,$table2){
+global $pdo;
+$sql = "
+SELECT 
+t1.id,
+t1.name,
+t1.description,
+t1.age,
+t1.valuation,
+t1.place,
+t1.img,
+t1.status,
+t2.username
+FROM $table1 AS t1 JOIN $table2 AS t2 ON t1.id_user = t2.id";
 
+$query = $pdo->prepare($sql);
+    $query->execute();
+    dbCheckError($query);   
+    return $query->fetchAll();
+}   
 
 
 ?>

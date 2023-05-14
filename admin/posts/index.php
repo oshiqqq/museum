@@ -34,18 +34,24 @@ include ("../../app/controllers/exhibits.php");
                     
                     <h1>Управление экспонатами</h1>
                     <div class ="col-1">ID</div>
-                    <div class ="col-4">Название</div>
-                    <div class ="col-3">Возраст</div>
+                    <div class ="col-5">Название</div>
+                    <div class ="col-2">Автор</div>
+            
                     <div class ="col-4">Управление</div>
                     
                 </div>
-                <?php foreach ($exhibitss as $key => $exhibit): ?>
+                <?php foreach ($exhibitssADM as $key => $exhibit): ?>
                 <div class = "row post">
                     <div class ="id col-1"><?=$key +1;?></div>
-                    <div class ="tittle col-4"><?=$exhibit['name'];?></div>
-                    <div class ="age col-3"><?=$exhibit['age'];?></div>
-                    <div class ="red col-2"><a href="edit.php?id=<?=$exhibit['id'];?>">edit</a></div>
-                    <div class ="del col-2"><a href="edit.php?del_id=<?=$exhibit['id'];?>">delete</a></div>
+                    <div class ="tittle col-5"><?=$exhibit['name'];?></div>
+                    <div class ="age col-2"><?=$exhibit['username'];?></div>
+                    <div class ="red col-1"><a href="edit.php?id=<?=$exhibit['id'];?>">edit</a></div>
+                    <div class ="del col-1"><a href="edit.php?del_id=<?=$exhibit['id'];?>">delete</a></div>
+                    <?php if($exhibit['status']): ?>
+                    <div class ="status col-2"><a href="edit.php?del_id=<?=$exhibit['id'];?>">unpublish</a></div>
+                    <?php else: ?>
+                        <div class ="status col-2"><a href="edit.php?del_id=<?=$exhibit['id'];?>">publish</a></div>
+                        <?php endif; ?>
                 </div>
                 <?php endforeach; ?>
                
