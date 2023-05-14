@@ -29,7 +29,7 @@ include "../../app/controllers/exhibits.php"
                     <a href = "index.php" class="col-4 btn btn-secondary">Редактировать</a>
                 </div>
                 <div class = "row title-table">
-                    <h1>Добавить экспонат</h1>
+                    <h1>Обновление экспоната</h1>
                     
                     
                 </div>
@@ -37,9 +37,9 @@ include "../../app/controllers/exhibits.php"
                 <div class="mb-12 col-12 col-md-12 err">
                 <p><?=$errMsg?></p>
         </div>
-                <form action="create.php" method="post">
+                <form action="edit.php" method="post">
+                <input name="id" value= "<?=$id;?>" type="hidden">
         <div class="mb-3">
-            <label for="name" class="form-label">Название</label>
             <input name="name" value="<?= $name ?>" type="text" class="form-control" id="name" placeholder="Введите название экспоната" required minlength="3">
         </div>
         <div class="mb-3">
@@ -62,7 +62,7 @@ include "../../app/controllers/exhibits.php"
             <label for="image" class="form-label">Изображение</label>
             <input name="" type="file" class="form-control" id="image" required>
         </div> -->
-        <button name="exhibits-create" type="submit" class="btn btn-primary" id="repair5" >Сохранить</button>
+        <button name="exhibits-edit" type="submit" class="btn btn-primary" id="repair5" >Обновить экспонат</button>
     </form>
                 </div>
                 </div>

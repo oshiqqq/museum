@@ -6,6 +6,7 @@ function tt($value){
     echo "<pre>";
     print_r($value);
     echo "</pre>";
+    exit();
 }
 
 // проверка выполнения запроса к бд

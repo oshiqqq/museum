@@ -1,4 +1,7 @@
-<?php session_start(); ?>
+<?php //session_start();
+include ("../../app/controllers/exhibits.php");
+ ?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -18,6 +21,7 @@
 <!-- header -->
 <?php include("../../app/include/header-admin.php"); ?>
 <div class ="container">
+
 <?php include("../../app/include/sidebar-admin.php"); ?>
           
             <div class = "posts col-9">
@@ -27,6 +31,7 @@
                     <a href = "index.php" class="col-4 btn btn-secondary">Редактировать</a>
                 </div>
                 <div class = "row title-table">
+                    
                     <h1>Управление экспонатами</h1>
                     <div class ="col-1">ID</div>
                     <div class ="col-4">Название</div>
@@ -34,27 +39,17 @@
                     <div class ="col-4">Управление</div>
                     
                 </div>
+                <?php foreach ($exhibitss as $key => $exhibit): ?>
                 <div class = "row post">
-                    <div class ="id col-1">1</div>
-                    <div class ="tittle col-4">Мамонт</div>
-                    <div class ="age col-3">миллион лет</div>
-                    <div class ="red col-2"><a href="#">edit</a></div>
-                    <div class ="del col-2"><a href="#">delete</a></div>
+                    <div class ="id col-1"><?=$key +1;?></div>
+                    <div class ="tittle col-4"><?=$exhibit['name'];?></div>
+                    <div class ="age col-3"><?=$exhibit['age'];?></div>
+                    <div class ="red col-2"><a href="edit.php?id=<?=$exhibit['id'];?>">edit</a></div>
+                    <div class ="del col-2"><a href="edit.php?del_id=<?=$exhibit['id'];?>">delete</a></div>
                 </div>
-                <div class = "row post">
-                    <div class ="id col-1">2</div>
-                    <div class ="tittle col-4">Название</div>
-                    <div class ="age col-3">Возраст</div>
-                    <div class ="red col-2"><a href="#">edit</a></div>
-                    <div class ="del col-2"><a href="#">delete</a></div>
-                </div>
-                <div class = "row post">
-                    <div class ="id col-1">3</div>
-                    <div class ="tittle col-4">Название</div>
-                    <div class ="age col-3">Возраст</div>
-                    <div class ="red col-2"><a href="#">edit</a></div>
-                    <div class ="del col-2"><a href="#">delete</a></div>
-                </div>
+                <?php endforeach; ?>
+               
+                
                 </div>
             
             </div>

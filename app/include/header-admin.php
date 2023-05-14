@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-4">
                 <h1>
-                    <a href="index.php"><i class="fa-solid fa-landmark"></i> музей</a>
+                    <a href="../../index.php"><i class="fa-solid fa-landmark"></i> музей</a>
                 </h1>
             </div>
             <nav class="col-8">

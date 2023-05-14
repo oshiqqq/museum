@@ -218,3 +218,6 @@ div .col{
 .mb-3 h2{
     color: #303036;
 }
+.err{
+    color:crimson;
+}
