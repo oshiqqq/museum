@@ -290,3 +290,32 @@ form div.err{
     color: brown;
     font-size: 1.2rem;
 }
+
+  
+      .post {
+            
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .post .img {
+            order: 1;
+            margin-right: 15px;
+        }
+
+        .post .post_text {
+            order: 2;
+        }
+        .col-sm-6{
+            margin: 20px auto;
+            margin-right: auto;
+          
+        }
+        .custom-thumbnail {
+            max-width: 200px;
+            max-height: 220px;
+            object-fit: contain;
+        }
+        .s22{
+            padding-right: 30px;
+        }

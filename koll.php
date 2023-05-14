@@ -1,4 +1,8 @@
-<?php include("app/database/db.php"); ?>
+<?php 
+include("app/database/db.php"); 
+$exhibits = selectAll('exhibits',['status'=>1]); 
+// tt($exhibits);
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -13,6 +17,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap"
           rel="stylesheet">
+    <style>
+    
+    </style>
 </head>
 <body>
 <!-- шапка -->
@@ -29,10 +36,34 @@
         <button type="submit" class="btn btn-primary">Найти</button>
     </form>
 
+    <div class="row">
+        <!-- Первый экспонат -->
+        <?php foreach ($exhibits as $exhibit): ?>
+        <div class="col-sm-6">
+            <div class="post row1">
+                <div class="col-12 col-md-4 img">
+                <!-- assets/images/exhibits/159734810613621269.jpg -->
+                    <img src="<?='assets/images/exhibits/' . $exhibit['img'] ?>" alt="<?=$exhibit['name']?>" class="img-thumbnail custom-thumbnail">
+                </div>
+                <div class="col-12 col-md-8 post_text">
+                    <h3>
+                        <a href="<?='' . 'single.php?post=' . $exhibit['id'];?>"><?= isset($exhibit['name']) ? (strlen($exhibit['name']) > 50 ? mb_substr($exhibit['name'], 0,20,'UTF-8') . '...' : $exhibit['name']) : '' ?></a>
+                    </h3>            
+                    <i class="s22" ><?= $exhibit['place']?></i>
+                    <i class="s22" ><?= $exhibit['age']?></i>
+                    <p class="preview-text">
+                    <?= isset($exhibit['description']) ? (strlen($exhibit['description']) > 150 ? mb_substr($exhibit['description'], 0, 150,'UTF-8') . '...' : $exhibit['description']) : '' ?>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <?php endforeach; ?>
 
 
+    </div>
 
 </div>
+
 
 <!-- footer -->
 <?php include("app/include/footer.php"); ?>
