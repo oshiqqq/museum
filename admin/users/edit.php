@@ -1,5 +1,9 @@
 <?php 
-include "../../app/controllers/users.php"
+include "../../app/controllers/users.php";
+if (!isset($_SESSION['id']) || $_SESSION['admin'] != 1) {
+    header('Location: ../../index.php'); // Перенаправление на страницу с отказом в доступе
+    exit;
+}
 ?>
 <!doctype html>
 <html lang="en">

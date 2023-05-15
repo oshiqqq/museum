@@ -1,5 +1,9 @@
 <?php 
         include("app/controllers/users.php");
+        if (isset($_SESSION['id'])) {
+            header('location: index.php'); // Перенаправление на другую страницу
+            exit;
+        }
  ?>
 <!doctype html>
 <html lang="en">
