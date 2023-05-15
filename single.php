@@ -3,7 +3,9 @@ include("app/database/db.php");
 
 
 $exhibit = selectOne('exhibits', ['id'=>$_GET['exhibit']]);
-tt($exhibit);
+
+
+// tt($exhibit);
 ?>
 <!doctype html>
 <html lang="en">
@@ -27,70 +29,23 @@ tt($exhibit);
 <!-- шапка -->
 <?php include("app/include/header.php"); ?>
 <!-- Контент страницы "Отображение, поиск и изменение описания экспоната" -->
-<div class="container">
-<div class="container">
+<div class="container3" id="singlepage">
     <div class="content row">
         <!-- Main Content -->
         <div class="main-content col-md-9 col-12">
-            <h2>Заголовок какой-то конкретной статьи, пока не понятно, о чем, но надо много текста
-            чтобы постмореть, как будет он  в несколько строк!</h2>
+            <h2 class="repair212"><?php echo $exhibit['name'] ?></h2>
 
             <div class="single_post row">
                 <div class="img col-12">
-                    <img src="images/image_1.png" alt="" class="img-thumbnail">
+                    <img src="<?='assets/images/exhibits/' . $exhibit['img'] ?>" alt="<?=$exhibit['name']?>" class="img-thumbnail">
                 </div>
                 <div class="info">
-                    <i class="s22">Место хранения:</i>
-                    <i class="s22">Возраст/год/эпоха:</i>
-                    <i class="s22">Ценность:</i>
+                    <i class="s22">Место хранения: <?php echo $exhibit['place'] ?></i>
+                    <i class="s22">Возраст: <?php echo $exhibit['age'] ?></i>
+                    <i class="s22">Ценность: <?php echo $exhibit['valuation'] ?></i>
                 </div>
                 <div class="single_post_text col-12">
-                    <h3>Заголовок третьего уровня</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione modi error rerum possimus animi! Eos!
-                    </p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam placeat at molestias vitae! Ipsa
-                        repudiandae praesentium nobis nesciunt, <a href="#"> pariatur</a> tenetur commodi! Iste sequi placeat dolores nulla,
-                        expedita voluptas officiis.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, facere iste! Ex quia hic recusandae
-                        optio velit ad consectetur totam sed sunt quasi voluptates, sequi molestias alias sapiente iste asperiores
-                        nostrum est voluptatem quae earum accusantium. Totam dolorem possimus rem!</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, nisi.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione modi error rerum possimus animi! Eos!
-                    </p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam placeat at molestias vitae! Ipsa
-                        repudiandae praesentium nobis nesciunt, iusto pariatur tenetur commodi! Iste sequi placeat dolores nulla,
-                        expedita voluptas officiis.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, facere iste! Ex quia hic recusandae
-                        optio velit ad consectetur totam sed sunt quasi voluptates, sequi molestias alias sapiente iste asperiores
-                        nostrum est voluptatem quae earum accusantium. Totam dolorem possimus rem!</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, nisi.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione modi error rerum possimus animi! Eos!
-                    </p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam placeat at molestias vitae! Ipsa
-                        repudiandae praesentium nobis nesciunt, iusto pariatur tenetur commodi! Iste sequi placeat dolores nulla,
-                        expedita voluptas officiis.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, facere iste! Ex quia hic recusandae
-                        optio velit ad consectetur totam sed sunt quasi voluptates, sequi molestias alias sapiente iste asperiores
-                        nostrum est voluptatem quae earum accusantium. Totam dolorem possimus rem!</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, nisi.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione modi error rerum possimus animi! Eos!
-                    </p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam placeat at molestias vitae! Ipsa
-                        repudiandae praesentium nobis nesciunt, iusto pariatur tenetur commodi! Iste sequi placeat dolores nulla,
-                        expedita voluptas officiis.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, facere iste! Ex quia hic recusandae
-                        optio velit ad consectetur totam sed sunt quasi voluptates, sequi molestias alias sapiente iste asperiores
-                        nostrum est voluptatem quae earum accusantium. Totam dolorem possimus rem!</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, nisi.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione modi error rerum possimus animi! Eos!
-                    </p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam placeat at molestias vitae! Ipsa
-                        repudiandae praesentium nobis nesciunt, iusto pariatur tenetur commodi! Iste sequi placeat dolores nulla,
-                        expedita voluptas officiis.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, facere iste! Ex quia hic recusandae
-                        optio velit ad consectetur totam sed sunt quasi voluptates, sequi molestias alias sapiente iste asperiores
-                        nostrum est voluptatem quae earum accusantium. Totam dolorem possimus rem!</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, nisi.</p>
+                <?php echo $exhibit['description'] ?>
                 </div>
             </div>
 
