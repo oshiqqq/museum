@@ -155,6 +155,24 @@ $query = $pdo->prepare($sql);
     dbCheckError($query);   
     return $query->fetchAll();
 }   
-
+/// Поиск по заголовкам и содержимым (примитивный)
+function searchInNameAndDescription($text,$table1,$table2){
+    $text = trim(strip_tags(stripcslashes(htmlspecialchars($text))));
+    global $pdo;
+    $sql = "SELECT 
+    e.*, u.username
+    FROM $table1 AS e
+    JOIN $table2 AS u
+    ON e.id_user = u.id
+    WHERE e.status = 1
+    AND e.name LIKE'%$text%' OR e.description LIKE '%$text%'";
+    
+    $query = $pdo->prepare($sql);
+        $query->execute();
+        dbCheckError($query);   
+        return $query->fetchAll();
+    }   
+    
+    
 
 ?>

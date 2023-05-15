@@ -1,7 +1,8 @@
 <?php 
-include("app/database/db.php"); 
-$exhibits = selectAll('exhibits',['status'=>1]); 
-// tt($exhibits);
+include("app/database/db.php");
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['search-tearm'])){
+$exhibits = searchInNameAndDescription($_POST['search-tearm'],'exhibits','users');
+} 
 ?>
 <!doctype html>
 <html lang="en">

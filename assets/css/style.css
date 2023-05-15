@@ -318,4 +318,10 @@ form div.err{
         }
         .s22{
             padding-right: 30px;
+            padding-bottom: 5px;
+            display: block;
         }
+        .info i {
+            display: block;
+        }
+       
