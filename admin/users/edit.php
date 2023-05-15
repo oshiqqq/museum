@@ -41,12 +41,12 @@ include "../../app/controllers/users.php"
                 <input name="id" value="<?=$id?>" type="hidden">
                 <div class="col">
             <label for="formGroupExampleInput" class="form-label">Логин</label>
-            <input name="login" value="<?=$username?>" type="text" class="form-control" id="formGroupExampleInput" placeholder="введите ваш логин...">
+            <input name="login" value="<?=$username?>" type="text" class="form-control" id="formGroupExampleInput" placeholder="введите ваш логин..." maxlength="12">
         </div>
         <div class="w-100"></div>
         <div class="col">
             <label for="exampleInputEmail1" class="form-label">Email</label>
-            <input readonly name="email" value=" <?=$email?>" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="введите ваш email...">
+            <input readonly name="email" value=" <?=$email?>" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="введите ваш email..." maxlength="30">
         </div>
         <div class="w-100"></div>
         <div class="col">

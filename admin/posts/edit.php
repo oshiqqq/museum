@@ -41,7 +41,7 @@ include "../../app/controllers/exhibits.php"
                 <input name="id" value= "<?=$id;?>" type="hidden">
         <div class="mb-3">
             <label for="name" class="form-label">Название</label>
-            <input name="name" value="<?= $name ?>" type="text" class="form-control" id="name" placeholder="Введите название экспоната" required minlength="3">
+            <input name="name" value="<?= $name ?>" type="text" class="form-control" id="name" placeholder="Введите название экспоната" required minlength="3" maxlength="120">
         </div>
         <div class="mb-3">
             <label for="description" class="form-label" resize: none;>Краткое описание</label>
@@ -49,15 +49,15 @@ include "../../app/controllers/exhibits.php"
         </div>
         <div class="mb-3">
             <label for="age" class="form-label">Возраст/год/эпоха</label>
-            <input name="age" value="<?= $age ?>" type="text" class="form-control" id="age" placeholder="Введите возраст/год/эпоху экспоната" required>
+            <input name="age" value="<?= $age ?>" type="text" class="form-control" id="age" placeholder="Введите возраст/год/эпоху экспоната" required maxlength="40">
         </div>
         <div class="mb-3">
             <label for="value" class="form-label">Ценность</label>
-            <input name="valuation" value="<?= $valuation ?>" type="text" class="form-control" id="value" placeholder="Введите ценность экспоната" required>
+            <input name="valuation" value="<?= $valuation ?>" type="text" class="form-control" id="value" placeholder="Введите ценность экспоната" required maxlength="50">
         </div>
         <div class="mb-3">
             <label for="storage" class="form-label">Место хранения</label>
-            <input name="place" value="<?= $place ?>" type="text" class="form-control" id="storage" placeholder="Введите место хранения экспоната" required>
+            <input name="place" value="<?= $place ?>" type="text" class="form-control" id="storage" placeholder="Введите место хранения экспоната" required maxlength="100">
         </div>
         <div class="mb-3">
             <label for="image" class="form-label">Изображение</label>

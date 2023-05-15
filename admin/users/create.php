@@ -40,12 +40,12 @@ include "../../app/controllers/users.php"
                 <form action="create.php" method="post">
                 <div class="col">
             <label for="formGroupExampleInput" class="form-label">Ваш логин</label>
-            <input name="login" value="" type="text" class="form-control" id="formGroupExampleInput" placeholder="введите ваш логин...">
+            <input name="login" value="" type="text" class="form-control" id="formGroupExampleInput" placeholder="введите ваш логин..." maxlength="12">
         </div>
         <div class="w-100"></div>
         <div class="col">
             <label for="exampleInputEmail1" class="form-label">Email</label>
-            <input name="email" value="" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="введите ваш email...">
+            <input name="email" value="" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="введите ваш email..." maxlength="30">
         </div>
         <div class="w-100"></div>
         <div class="col">

@@ -43,7 +43,7 @@ include ("../../app/controllers/exhibits.php");
                 <?php foreach ($exhibitssADM as $key => $exhibit): ?>
                 <div class = "row post">
                     <div class ="id col-1"><?=$key +1;?></div>
-                    <div class ="tittle col-5"><a href="<?='' . 'single.php?exhibit=' . $exhibit['id'];?>"><?= isset($exhibit['name']) ? (strlen($exhibit['name']) > 50 ? mb_substr($exhibit['name'], 0,20,'UTF-8') . '...' : $exhibit['name']) : '' ?></a></div>
+                    <div class ="tittle col-5"><a href="<?='../../' . 'single.php?exhibit=' . $exhibit['id'];?>"><?= isset($exhibit['name']) ? (strlen($exhibit['name']) > 50 ? mb_substr($exhibit['name'], 0,20,'UTF-8') . '...' : $exhibit['name']) : '' ?></a></div>
                     <div class ="age col-2"><?=$exhibit['username'];?></div>
                     <div class ="red col-1"><a href="edit.php?id=<?=$exhibit['id'];?>">edit</a></div>
                     <div class ="del col-1"><a href="edit.php?del_id=<?=$exhibit['id'];?>">delete</a></div>
