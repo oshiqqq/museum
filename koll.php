@@ -1,7 +1,7 @@
 <?php 
 include("app/database/db.php"); 
 $exhibits = selectAll('exhibits',['status'=>1]); 
-// tt($exhibits);
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -47,10 +47,10 @@ $exhibits = selectAll('exhibits',['status'=>1]);
                 </div>
                 <div class="col-12 col-md-8 post_text">
                     <h3>
-                        <a href="<?='' . 'single.php?exhibit=' . $exhibit['id'];?>"><?= isset($exhibit['name']) ? (strlen($exhibit['name']) > 20 ? mb_substr($exhibit['name'], 0,20,'UTF-8') . '...' : $exhibit['name']) : '' ?></a>
+                        <a href="<?='' . 'single.php?exhibit=' . $exhibit['id'];?>"><?= isset($exhibit['name']) ? (strlen($exhibit['name']) > 50 ? mb_substr($exhibit['name'], 0,30,'UTF-8') . '...' : $exhibit['name']) : '' ?></a>
                     </h3>            
                     <i class="s22" >Место: <?= $exhibit['place']?></i>
-                    <i class="s22" >Возраст: <?= $exhibit['age']?></i>
+                    <i class="s22" >Дата: <?= $exhibit['age']?></i>
                     <p class="preview-text">
                     <?= isset($exhibit['description']) ? (strlen($exhibit['description']) > 170 ? mb_substr($exhibit['description'], 0, 170,'UTF-8') . '...' : $exhibit['description']) : '' ?>
                     </p>

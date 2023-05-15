@@ -48,7 +48,7 @@ $exhibits = searchInNameAndDescription($_POST['search-tearm'],'exhibits','users'
                 </div>
                 <div class="col-12 col-md-8 post_text">
                     <h3>
-                        <a href="<?='' . 'single.php?exhibit=' . $exhibit['id'];?>"><?= isset($exhibit['name']) ? (strlen($exhibit['name']) > 50 ? mb_substr($exhibit['name'], 0,20,'UTF-8') . '...' : $exhibit['name']) : '' ?></a>
+                        <a href="<?='' . 'single.php?exhibit=' . $exhibit['id'];?>"><?= isset($exhibit['name']) ? (strlen($exhibit['name']) > 50 ? mb_substr($exhibit['name'], 0,30,'UTF-8') . '...' : $exhibit['name']) : '' ?></a>
                     </h3>            
                     <i class="s22" >Место: <?= $exhibit['place']?></i>
                     <i class="s22" >Возраст: <?= $exhibit['age']?></i>

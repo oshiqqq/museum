@@ -41,8 +41,8 @@ $exhibit = selectOne('exhibits', ['id'=>$_GET['exhibit']]);
                 </div>
                 <div class="info">
                     <i class="s22">Место хранения: <?php echo $exhibit['place'] ?></i>
-                    <i class="s22">Возраст: <?php echo $exhibit['age'] ?></i>
-                    <i class="s22">Ценность: <?php echo $exhibit['valuation'] ?></i>
+                    <i class="s22">Время создания: <?php echo $exhibit['age'] ?></i>
+                    <i class="s22">Техника: <?php echo $exhibit['valuation'] ?></i>
                 </div>
                 <div class="single_post_text col-12">
                 <?php echo $exhibit['description'] ?>

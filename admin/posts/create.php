@@ -52,11 +52,11 @@ if (!isset($_SESSION['id']) || $_SESSION['admin'] != 1) {
         </div>
         <div class="mb-3">
             <label for="age" class="form-label">Возраст/год/эпоха</label>
-            <input name="age" value="<?= $age ?>" type="text" class="form-control" id="age" placeholder="Введите возраст/год/эпоху экспоната" required maxlength="40">
+            <input name="age" value="<?= $age ?>" type="text" class="form-control" id="age" placeholder="Введите возраст/год/эпоху экспоната" required maxlength="60">
         </div>
         <div class="mb-3">
-            <label for="value" class="form-label">Ценность</label>
-            <input name="valuation" value="<?= $valuation ?>" type="text" class="form-control" id="value" placeholder="Введите ценность экспоната" required maxlength="50">
+            <label for="value" class="form-label">Техника</label>
+            <input name="valuation" value="<?= $valuation ?>" type="text" class="form-control" id="value" placeholder="Введите ценность экспоната" required maxlength="100">
         </div>
         <div class="mb-3">
             <label for="storage" class="form-label">Место хранения</label>

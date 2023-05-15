@@ -180,11 +180,3 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update-user'])){
     }
 
 
-    
-    // if($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['pub_id'])){
-    //     $id = $_GET['pub_id'];
-    //     $publish = $_GET['publish'];
-    //     $exhibitId = update('exhibits',$id,['status'=>$publish]);
-    //     header('location: ' . "index.php");
-    //     exit();
-    // }
