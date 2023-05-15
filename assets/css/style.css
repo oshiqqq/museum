@@ -323,10 +323,14 @@ form div.err{
         }
         .info i {
             display: block;
+            padding-top: 10px;
+            padding-bottom: 15px;
         }
         .repair212{
             padding-top: 20px;
             padding-bottom: 10px;
             color:#4f5b93 ;
         }
+
+    
        

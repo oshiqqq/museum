@@ -40,9 +40,9 @@ $exhibit = selectOne('exhibits', ['id'=>$_GET['exhibit']]);
                     <img src="<?='assets/images/exhibits/' . $exhibit['img'] ?>" alt="<?=$exhibit['name']?>" class="img-thumbnail">
                 </div>
                 <div class="info">
-                    <i class="s22">Место хранения: <?php echo $exhibit['place'] ?></i>
-                    <i class="s22">Время создания: <?php echo $exhibit['age'] ?></i>
-                    <i class="s22">Техника: <?php echo $exhibit['valuation'] ?></i>
+                    <i class="s22"><strong>Место хранения:</strong> <?php echo $exhibit['place'] ?></i>
+                    <i class="s22"><strong>Время создания:</strong> <?php echo $exhibit['age'] ?></i>
+                    <i class="s22"><strong>Техника:</strong> <?php echo $exhibit['valuation'] ?></i>
                 </div>
                 <div class="single_post_text col-12">
                 <?php echo $exhibit['description'] ?>
