@@ -8,6 +8,11 @@ function tt($value){
     echo "</pre>";
     exit();
 }
+function te($value){
+    echo "<pre>";
+    print_r($value);
+    echo "</pre>";
+}
 
 // проверка выполнения запроса к бд
 
