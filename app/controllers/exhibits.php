@@ -18,13 +18,13 @@ $exhibitssADM = selectAllFromExhibitsWithUsers('exhibits','users'); // для в
 
 // форма создания экспоната 
 if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['exhibits-create'])){
-    // tt($_FILES);
+    //tt($_FILES);
     if(!empty($_FILES['image']['name'])){
         $imagename = time() . "_" . $_FILES['image']['name'];
         $filetmpname = $_FILES['image']['tmp_name'];
         $filetype = $_FILES['image']['type'];
         $destination = "../../assets/images/exhibits\\" . $imagename;
-        
+        $filesize = $_FILES['image']['size'];
 
         if(strpos($filetype, 'image')===false){
             die("Можно загружать только изображения");
